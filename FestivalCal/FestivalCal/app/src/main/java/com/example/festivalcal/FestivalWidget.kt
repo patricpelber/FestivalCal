@@ -17,7 +17,7 @@ class FestivalWidget : AppWidgetProvider() {
     override fun onReceive(ctx: Context, intent: Intent) {
         super.onReceive(ctx, intent)
         val a = intent.action
-        if (a == Intent.ACTION_DATE_CHANGED || a == Intent.ACTION_TIME_SET || a == Intent.ACTION_TIMEZONE_CHANGED) {
+        if (a == Intent.ACTION_DATE_CHANGED || a == Intent.ACTION_TIME_CHANGED || a == Intent.ACTION_TIMEZONE_CHANGED) {
             val mgr = AppWidgetManager.getInstance(ctx)
             onUpdate(ctx, mgr, mgr.getAppWidgetIds(ComponentName(ctx, FestivalWidget::class.java)))
         }
